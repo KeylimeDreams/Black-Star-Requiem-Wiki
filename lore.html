@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lore — Black Star Requiem Wiki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg-main: #05030a;
+      --bg-panel: #0d0618;
+      --accent-violet: #7b2cff;
+      --accent-deep: #3b0b63;
+      --text-main: #f5f5ff;
+      --text-muted: #b3a6d9;
+      --border-soft: #2a163f;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1a0b33 0, #05030a 55%, #000 100%);
+      color: var(--text-main);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(90deg, #05030a, #12071f, #05030a);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    header img {
+      height: 60px;
+      width: 60px;
+      margin-right: 1rem;
+    }
+
+    .site-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      background: linear-gradient(120deg, #ffffff, #a0ffcf);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-transform: uppercase;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.2rem;
+      transition: 0.25s;
+    }
+
+    nav a:hover {
+      color: var(--accent-violet);
+      border-color: var(--accent-violet);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 0 2rem;
+    }
+
+    /* LORE CARD STYLING */
+    .lore-entry {
+      margin-bottom: 2.5rem;
+    }
+
+    .lore-card {
+      background: linear-gradient(145deg, #0b0415, #140824);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 1.75rem;
+      display: flex;
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    .lore-image {
+      width: 260px;
+      border-radius: 10px;
+      border: 1px solid var(--accent-deep);
+      box-shadow: 0 0 18px rgba(123, 44, 255, 0.25);
+    }
+
+    .lore-title {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+      color: #fdfbff;
+    }
+
+    .lore-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1rem 2.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-soft);
+      background: #04020a;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="Black_Star_Logo.png" alt="Black Star Requiem Logo" />
+    <div class="site-title">Black Star Requiem Wiki</div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="characters.html">Characters</a>
+      <a href="stories.html">Stories</a>
+      <a href="lore.html">Lore</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- LORE ENTRY #1 -->
+    <section class="lore-entry">
+      <div class="lore-card">
+        <img src="LORE1.png" alt="The Guardians Creation" class="lore-image" />
+
+        <div class="lore-content">
+          <h2 class="lore-title">The Guardians’ Creation</h2>
+
+          <p class="lore-text">
+            After ascending as The Dark Star, Seron stood alone in a universe he forged from the ashes of the one he lost.
+            Though his power was immeasurable, the weight of solitude was heavier than any cosmic burden. He had rebuilt
+            existence — but he had no one to share the responsibility of protecting it.
+          </p>
+
+          <p class="lore-text">
+            Two worlds became the heart of his new reality: <strong>Guardia</strong>, a thriving civilization of warriors,
+            and <strong>Zavara</strong>, a world of mystics, scholars, and star‑born innovators. Both planets were destined
+            to become targets of cosmic threats — void remnants, astral predators, and forces drawn to Seron’s new creation.
+          </p>
+
+          <p class="lore-text">
+            Seron refused to let history repeat itself. He would not watch another universe fall.  
+            And he would not fight alone.
+          </p>
+
+          <p class="lore-text">
+            Channeling fragments of his own cosmic essence, Seron forged the first generation of
+            <strong>The Guardians</strong> — beings chosen not for power, but for spirit. Each Guardian carried a spark of
+            the Dark Star within them, granting abilities shaped by their will, identity, and purpose.
+          </p>
+
+          <p class="lore-text">
+            From that moment forward, the Guardians became the shield of Guardia and Zavara — protectors of the Prime
+            Universe, defenders of the innocent, and the living legacy of Seron’s vow:
+            <em>that no world under his watch would ever fall to darkness again.</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © Black Star Requiem Wiki — Lore Archive
+  </footer>
+
+</body>
+</html>
