@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Characters — Black Star Requiem Wiki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg-main: #05030a;
+      --bg-panel: #0d0618;
+      --accent-violet: #7b2cff;
+      --accent-deep: #3b0b63;
+      --text-main: #f5f5ff;
+      --text-muted: #b3a6d9;
+      --border-soft: #2a163f;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1a0b33 0, #05030a 55%, #000 100%);
+      color: var(--text-main);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(90deg, #05030a, #12071f, #05030a);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    header img {
+      height: 60px;
+      width: 60px;
+      margin-right: 1rem;
+    }
+
+    .site-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      background: linear-gradient(120deg, #ffffff, #a0ffcf);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-transform: uppercase;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.2rem;
+      transition: 0.25s;
+    }
+
+    nav a:hover {
+      color: var(--accent-violet);
+      border-color: var(--accent-violet);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 0 2rem;
+    }
+
+    .character-card {
+      background: linear-gradient(145deg, #0b0415, #140824);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    .character-card img {
+      width: 260px;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid var(--accent-deep);
+      box-shadow: 0 0 18px rgba(123, 44, 255, 0.25);
+    }
+
+    .char-info h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: #fdfbff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .char-info p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 700px;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1rem 2.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-soft);
+      background: #04020a;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="Black_Star_Logo.png" alt="Black Star Requiem Logo" />
+    <div class="site-title">Black Star Requiem Wiki</div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="characters.html">Characters</a>
+      <a href="stories.html">Stories</a>
+      <a href="lore.html">Lore</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- SERON — FIRST CHARACTER -->
+    <section class="character-card">
+      <img src="Seron.png" alt="Seron Darkness" />
+
+      <div class="char-info">
+        <h2>Seron Darkness — The Dark Star</h2>
+        <p>
+          Seron Darkness is the primordial architect of the Black Star Requiem universe.  
+          Once human, he witnessed the collapse of his original reality — a cosmic extinction that erased everything he knew.  
+          In the final moment before oblivion, Seron merged with a dying Dark Star, ascending into a cosmic entity capable of shaping galaxies, rewriting laws, and forging existence itself.
+        </p>
+        <p>
+          Now known as <strong>The Dark Star</strong>, Seron created the Prime Universe — a realm born from grief, willpower, and limitless cosmic force.  
+          His presence echoes through every star, every dimension, and every event that unfolds within the Requiem.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © Black Star Requiem Wiki — Characters Archive
+  </footer>
+
+</body>
+</html>
