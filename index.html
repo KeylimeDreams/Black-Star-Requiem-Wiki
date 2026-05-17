@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Black Star Requiem Wiki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg-main: #05030a;
+      --bg-panel: #0d0618;
+      --accent-violet: #7b2cff;
+      --accent-deep: #3b0b63;
+      --text-main: #f5f5ff;
+      --text-muted: #b3a6d9;
+      --border-soft: #2a163f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1a0b33 0, #05030a 55%, #000000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border-soft);
+      background: linear-gradient(90deg, #05030a 0, #12071f 40%, #05030a 100%);
+      padding: 1rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    header img {
+      height: 64px;
+      width: 64px;
+      object-fit: contain;
+    }
+
+    .title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .site-title {
+      font-size: 1.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: linear-gradient(120deg, #fdfdfd, #a0ffcf);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 700;
+    }
+
+    .site-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 640px;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--accent-violet);
+      border-color: var(--accent-violet);
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem 2.5rem 3rem;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+      gap: 2rem;
+    }
+
+    .intro-panel {
+      background: radial-gradient(circle at top left, #3b0b63 0, #0d0618 45%, #05030a 100%);
+      border-radius: 14px;
+      padding: 1.75rem 1.75rem 1.5rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 0 32px rgba(0, 0, 0, 0.7);
+    }
+
+    .intro-panel h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      color: #fdfbff;
+    }
+
+    .intro-panel p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 720px;
+    }
+
+    .tagline {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #e0d5ff;
+    }
+
+    .tagline span {
+      color: var(--accent-violet);
+    }
+
+    .categories-grid {
+      margin-top: 1.75rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .category-card {
+      background: linear-gradient(145deg, #0b0415, #140824);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--border-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top, rgba(123, 44, 255, 0.18), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    .category-card:hover::before {
+      opacity: 1;
+    }
+
+    .category-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.4rem;
+      color: #fdfbff;
+    }
+
+    .category-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .sidebar-panel {
+      background: #05030f;
+      border-radius: 12px;
+      border: 1px solid var(--border-soft);
+      padding: 1.25rem 1.4rem;
+    }
+
+    .sidebar-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #e7ddff;
+      margin-bottom: 0.6rem;
+    }
+
+    .sidebar-list {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .sidebar-list li + li {
+      margin-top: 0.35rem;
+    }
+
+    .star-mark {
+      color: #a0ffcf;
+      margin-right: 0.35rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 0.9rem 2.5rem 1.2rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #04020a;
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #c9ffea;
+    }
+
+    .footer-star-icon {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid #c9ffea;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(45deg);
+      position: relative;
+    }
+
+    .footer-star-icon::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      border-radius: inherit;
+      border: 1px solid rgba(201, 255, 234, 0.6);
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      header {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Black_Star_Logo.png" alt="Black Star Requiem Logo" />
+    <div class="title-block">
+      <div class="site-title">The Black Star Requiem Wiki</div>
+      <div class="site-subtitle">
+        Black Star Requiem is an anime about Seron Darkness, also known as The Dark Star, who lost his universe
+        and ascended—creating his own prime universe from the ashes of cosmic ruin.
+      </div>
+    </div>
+    <nav>
+      <a href="#characters">Characters</a>
+      <a href="#stories">Stories</a>
+      <a href="#lore">Lore</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro-panel">
+      <h1>Welcome to the Prime Universe Archive</h1>
+      <p>
+        This wiki chronicles the rise of Seron Darkness after the fall of his original universe. Here you will find
+        detailed records of his transformation into The Dark Star, the forging of his new prime reality, and the
+        forces that move in the shadows of his creation. Every entry is a fragment of a universe rebuilt by will,
+        grief, and cosmic power.
+      </p>
+      <div class="tagline">
+        From <span>lost cosmos</span> to <span>requiem of stars</span>.
+      </div>
+
+      <div class="categories-grid">
+        <article class="category-card" id="characters">
+          <h2 class="category-title">Characters</h2>
+          <p class="category-desc">
+            Profiles of Seron Darkness and every being shaped by his new universe—allies, enemies, and entities
+            that survived the collapse. Track evolutions, forms, abilities, and pivotal moments across timelines.
+          </p>
+        </article>
+
+        <article class="category-card" id="stories">
+          <h2 class="category-title">Stories</h2>
+          <p class="category-desc">
+            Canon stories, arcs, and episodes that chart the journey from annihilation to ascension. Follow the
+            narrative of The Dark Star as he confronts loss, power, and the cost of rewriting existence.
+          </p>
+        </article>
+
+        <article class="category-card" id="lore">
+          <h2 class="category-title">Lore</h2>
+          <p class="category-desc">
+            Deep lore on universes before and after the fall, cosmic laws, artifacts, and metaphysical systems that
+            define Black Star Requiem. Understand how a single will can bend the structure of reality itself.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <section class="sidebar-panel">
+        <h3 class="sidebar-title">Prime universe focus</h3>
+        <ul class="sidebar-list">
+          <li><span class="star-mark">✦</span>Origin of The Dark Star</li>
+          <li><span class="star-mark">✦</span>Collapse of the former universe</li>
+          <li><span class="star-mark">✦</span>Creation of the prime universe</li>
+          <li><span class="star-mark">✦</span>Key factions and cosmic forces</li>
+        </ul>
+      </section>
+
+      <section class="sidebar-panel">
+        <h3 class="sidebar-title">Suggested starting points</h3>
+        <ul class="sidebar-list">
+          <li><span class="star-mark">✦</span>Seron Darkness (Character Overview)</li>
+          <li><span class="star-mark">✦</span>Event: The Lost Universe</li>
+          <li><span class="star-mark">✦</span>Concept: Ascension and Requiem</li>
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+  <footer>
+    <div>© Black Star Requiem Wiki · Fan-made archive of the prime universe.</div>
+    <div class="footer-right">
+      <div class="footer-star-icon" aria-hidden="true"></div>
+      FALLEN STAR · RISING REQUIEM
+    </div>
+  </footer>
+</body>
+</html>
